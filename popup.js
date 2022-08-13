@@ -1,3 +1,26 @@
+const ele = document.getElementById("btn")
+ele.addEventListener("click", () => {
+  chrome.runtime.sendMessage({ time: "1" }, function (response) {
+    console.log(response);
+  });
+  chrome.runtime.sendMessage({ time: "2" }, function (response) {
+    console.log(response);
+  });
+  // Activation button for the Pomodoro method:
+  chrome.runtime.sendMessage({ time: "3" }, function (response) {
+    console.log(response);
+  }); 
+  chrome.runtime.sendMessage({ time: "4" }, function (response) {
+    console.log(response);
+  }); 
+});
+
+
+
+
+
+
+/*
 // Initialize butotn with users's prefered color
 let changeColor = document.getElementById("changeColor");
 
@@ -22,3 +45,4 @@ function setPageBackgroundColor() {
     document.body.style.backgroundColor = color;
   });
 }
+*/
