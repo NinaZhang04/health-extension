@@ -1,52 +1,50 @@
 <!DOCTYPE html>
-
+<html lang="EN">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="HEmain.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drink Water</title>
   <script defer src="popup.js"></script>
+  <title>Balance™ Chrome Extension</title>
 </head>
 
+<body style="height:700px; width:270px; margin: 0px 0px 0px 0px; font-family: 'Noto Sans JP', sans-serif;">
 
-<body>
-  <!--By pressing this button it should read all the fields-->
-  <button id="btn">Set all reminders with default suggested values (30 min waterbreak, 1 hour screen breaks, poromodo setup, and 11pm sleep)</button>
+  <div class="header">
+    <h2>Balance™ Alarms</h2>
+  </div>
 
-  <!--water break input-->
-  <button id="water_break">Set water break interval (minutes)</button>
-  <input type="number" id="waterNum"><br>
+  <u><h4>Our Recommendation:</h4></u>
 
-  <!--screen break input-->
-  <button id="screen_break">Set screen break interval (minutes)</button>
-  <input type="number" id="screenNum"><br>
+  <button id="btn">Set all reminders with suggested values</button>
+  <u><h4 class="separate">Choose Your Intervals:</h4></u>
 
-  <!--Pomodoro-->
-  <button id="pomodoro_timer">Start pomodoro</button>
+  <button id="water_break">Set your Water Break interval (in min)</button>
+  <input type="number" id="waterNum" min="0.1" oninput="validity.valid||(value='');"><br>
 
-  <!--sleep input(make sure this number is two digit max)-->
-  <button id="sleep_reminder">Set sleep time (24 hour time full hour)</button>
-  <input type="number" id="sleepNum" min="0" max="24"><br>
+  <button id="screen_break">Set your Screen Break interval (in min)</button>
+  <input type="number" id="screenNum" min="0.1" oninput="validity.valid||(value='');"><br>
 
-  <!--Stop buttons-->
-  <button id="stopWater">Stop water break reminder</button>
-  <button id="stopScreen">Stop screen break reminder</button>
-  <button id="stopPomodoro">Stop pomodoro reminder</button>
-  <button id="stopSleepReminder">Stop sleep reminder</button>
+  <button id="sleep_reminder">Set your Sleep Schedule (in 24hr time)</button>
+  <input type="number" id="sleepNum" min="0.1" oninput="validity.valid||(value='');"><br>
+
+  <u><h4 class="separate">Choose Your Study Method:</h4></u>
+  <button id="pomodoro_timer">Start a Pomodoro Method timer</button>
+
+  <u><h4 class="separate">Stop Method(s):</h4></u>
+  <button id="stopWater">Stop your Water Break reminders</button>
+  <button id="stopScreen">Stop your Screen Break reminders</button>
+  <button id="stopPomodoro">Stop your Pomodoro Method reminders</button>
+  <button id="stopSleepReminder">Stop your Sleep Schedule reminders</button>
   <button id="stopAllReminders">Stop all reminders</button>
 
+  <div class="footer">
+    <h3>Created by @N.Y.#5628, @Healtone#9925, @cantfindname#4010, @AnonymousArmour71#9458; ©2022</h3>
+  </div>
 </body>
-
 </html>
 
-<!--
-<html>
-  <head>
-    <link rel="stylesheet" href="button.css">
-  </head>
-  <body>
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
-  </body>
-</html>
--->
