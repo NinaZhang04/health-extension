@@ -96,16 +96,36 @@ chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
     //console.log(request);
     if (request.time == 1){
-      createAlarm(1, 1);
+      createAlarm(1, request.repeat);
     } 
     else if(request.time == 2){
-      createAlarm(2, 5);
+      createAlarm(2, request.repeat);
     } 
     else if (request.time == 3) {
       createAlarm(3, 1); // note: the second parameter wouldn't matter for the specified function.
     } 
     else if (request.time == 4) {
-      createAlarm(4, 1); // note: the second parameter wouldn't matter for the specified function.
+      createAlarm(4, request.repeat); // note: the second parameter wouldn't matter for the specified function.
+    }
+    else if(request.time  == 5){
+      console.log(5);
+      stopWaterAlarm();
+    }
+    else if(request.time  == 6){
+      console.log(6);
+      stopScreenTimeAlarm();
+    }
+    else if(request.time  == 7){
+      console.log(7);
+      stopPomodoroAlarm();
+    }
+    else if(request.time  == 8){
+      console.log(8);
+      stopSleepAlarm();
+    }
+    else if(request.time  == 9){
+      console.log(9);
+      stopAllAlarm();
     }
 
   }
@@ -161,7 +181,7 @@ function createAlarm(type, num){
 
     console.log(msPassed);
     //Use the sleep time to subtract that milisecond
-    let addedTime = 1000*3600*18 + 1000*60*15 - msPassed;
+    let addedTime = 1000*3600*num - msPassed;
     console.log(addedTime);
     //if the time already passed
     if(addedTime <= 0){
@@ -171,7 +191,7 @@ function createAlarm(type, num){
       //
     }
 
-console.log(Date.now() + addedTime);
+  console.log(Date.now() + addedTime);
     chrome.alarms.create(
       "sleep-reminder",
       {
@@ -183,6 +203,7 @@ console.log(Date.now() + addedTime);
       }
     )
   }
+
 }
 
 

@@ -10,7 +10,31 @@
 
 
 <body>
-  <button id="btn">set alarm</button>
+  <!--By pressing this button it should read all the fields-->
+  <button id="btn">Set all reminders with default suggested values (30 min waterbreak, 1 hour screen breaks, poromodo setup, and 11pm sleep)</button>
+
+  <!--water break input-->
+  <button id="water_break">Set water break interval (minutes)</button>
+  <input type="number" id="waterNum"><br>
+
+  <!--screen break input-->
+  <button id="screen_break">Set screen break interval (minutes)</button>
+  <input type="number" id="screenNum"><br>
+
+  <!--Pomodoro-->
+  <button id="pomodoro_timer">Start pomodoro</button>
+
+  <!--sleep input(make sure this number is two digit max)-->
+  <button id="sleep_reminder">Set sleep time (24 hour time full hour)</button>
+  <input type="number" id="sleepNum" min="0" max="24"><br>
+
+  <!--Stop buttons-->
+  <button id="stopWater">Stop water break reminder</button>
+  <button id="stopScreen">Stop screen break reminder</button>
+  <button id="stopPomodoro">Stop pomodoro reminder</button>
+  <button id="stopSleepReminder">Stop sleep reminder</button>
+  <button id="stopAllReminders">Stop all reminders</button>
+
 </body>
 
 </html>
